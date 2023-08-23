@@ -75,7 +75,7 @@ public class Productos {
 	public String toString() {
 		return "Productos [id=" + id + ", tittle=" + tittle + ", price=" + price + ", description=" + description
 				+ ", img1=" + img1 + ", img2=" + img2 + "]";
-	}
+	}//toString
 	
 	
 		

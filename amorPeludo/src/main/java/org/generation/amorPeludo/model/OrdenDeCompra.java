@@ -1,17 +1,15 @@
 package org.generation.amorPeludo.model;
 
-import java.sql.Date;
-
 public class OrdenDeCompra {
 
-	private long id;
-	private long usuario_id;
-	private long productos_id;
-	private Date fecha;
+	private Long id;
+	private Long usuario_id;
+	private Long productos_id;
+	private String fecha;
 	private Double total;
 	private static long totalOrden = 0;
 	
-	public OrdenDeCompra(long usuario_id, long productos_id, Date fecha, Double total) {
+	public OrdenDeCompra(Long usuario_id, Long productos_id, String fecha, Double total) {
 		super();
 		this.usuario_id = usuario_id;
 		this.productos_id = productos_id;
@@ -28,27 +26,27 @@ public class OrdenDeCompra {
 		this.id=OrdenDeCompra.totalOrden;
 	}//constructor vacío OrdenCompra
 
-	public long getUsuario_id() {
+	public Long getUsuario_id() {
 		return usuario_id;
 	}// getUsuario
 
-	public void setUsuario_id(long usuario_id) {
+	public void setUsuario_id(Long usuario_id) {
 		this.usuario_id = usuario_id;
 	}//setUsuario
 
-	public long getProductos_id() {
+	public Long getProductos_id() {
 		return productos_id;
 	}//getProductos
 
-	public void setProductos_id(long productos_id) {
+	public void setProductos_id(Long productos_id) {
 		this.productos_id = productos_id;
 	}//setProductos
 
-	public Date getFecha() {
+	public String getFecha() {
 		return fecha;
 	}//getFecha
 
-	public void setFecha(Date fecha) {
+	public void setFecha(String fecha) {
 		this.fecha = fecha;
 	}//setFecha
 
@@ -60,7 +58,7 @@ public class OrdenDeCompra {
 		this.total = total;
 	}//setTotal
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}//getId
 

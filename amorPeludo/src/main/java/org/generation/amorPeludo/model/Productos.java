@@ -1,32 +1,45 @@
 package org.generation.amorPeludo.model;
 
-public class Productos {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="productos")
+public class Productos {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column (name="id",unique=true, nullable=false)
 	private Long id;
+	@Column (nullable=false)
 	private String tittle;
+	@Column (nullable = false)
 	private Double price;
+	@Column (nullable = false)
 	private String description;
+	@Column (nullable = false)
 	private String img1;
+	@Column (nullable = false)
 	private String img2;
-	private static long total = 0;
+
 	
 	public Productos(String tittle, Double price, String description, String img1, String img2) {
-		super();
 		this.tittle = tittle;
 		this.price = price;
 		this.description = description;
 		this.img1 = img1;
 		this.img2 = img2;
-		Productos.total++;
-		this.id=Productos.total;	
 	} // constructor
 
+	
 	public Productos() {
-		super();
-		Productos.total++;
-		this.id=Productos.total;	
 	} // constructor vacio
 
+	// GETTERS Y SETTERS
 	public String getTittle() {
 		return tittle;
 	} //getTittle
@@ -76,7 +89,6 @@ public class Productos {
 		return "Productos [id=" + id + ", tittle=" + tittle + ", price=" + price + ", description=" + description
 				+ ", img1=" + img1 + ", img2=" + img2 + "]";
 	}//toString
-	
 	
 		
 } // class Productos

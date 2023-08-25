@@ -1,32 +1,46 @@
 package org.generation.amorPeludo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="usuarios")
 public class Usuario {
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column (name="id",unique=true, nullable=false)
 	private Long id;
+	@Column (nullable=false)
 	private String email;
+	@Column (nullable=false)
 	private String nombre;
+	@Column (nullable=false)
 	private String apellido;
+	@Column (nullable=false)
 	private String contraseña;
+	@Column (nullable=false)
 	private String confirmarContraseña;
-	private static long total = 0;
+
 	
 	public Usuario(String email, String nombre, String apellido, String contraseña, String confirmarContraseña) {
-		super();
 		this.email = email;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.contraseña = contraseña;
 		this.confirmarContraseña = confirmarContraseña;
-		Usuario.total++;
-		this.id=Usuario.total;
 	}//constructor
 
 	
 	public Usuario() {
-		super();
-		Usuario.total++;
-		this.id=Usuario.total;
 	}//constructorvacío
 
+	
+	// GETTERS Y SETTERS : 
 	
 	public String getEmail() {
 		return email;
@@ -79,6 +93,5 @@ public class Usuario {
 				+ ", contraseña=" + contraseña + ", confirmarContraseña=" + confirmarContraseña + "]";
 	}//toString
 	
-	
-	
+		
 }//classUsuario

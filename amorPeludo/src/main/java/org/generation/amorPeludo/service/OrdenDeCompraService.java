@@ -1,71 +1,61 @@
 package org.generation.amorPeludo.service;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import org.generation.amorPeludo.model.OrdenDeCompra;
+import org.generation.amorPeludo.repository.OrdenDeCompraRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OrdenDeCompraService {
-	public final ArrayList<OrdenDeCompra> lista = new ArrayList<>();
-
-	public OrdenDeCompraService() {
-		lista.add(new OrdenDeCompra(1L,9L,"2023-06-15",130.00));
-		lista.add(new OrdenDeCompra(2L,5L,"2023-07-25",180.00));
-		lista.add(new OrdenDeCompra(3L,3L,"2023-07-30",110.00));
-		lista.add(new OrdenDeCompra(4L,12L,"2023-08-10",150.00));
-		lista.add(new OrdenDeCompra(5L,8L,"2023-08-17",180.00));
-		lista.add(new OrdenDeCompra(6L,1L,"2023-08-12",150.00));
+	private final OrdenDeCompraRepository ordenDeCompraRepository;
+	
+	@Autowired
+	public OrdenDeCompraService( OrdenDeCompraRepository ordenDeCompraRepository) {
+		this.ordenDeCompraRepository = ordenDeCompraRepository;
 	} // Constructor OrdenDeCompraService
 
+	//MÉTODOS
+	
 	public List<OrdenDeCompra> getAllOrdenDeCompras() {
-		return this.lista;
+		return ordenDeCompraRepository.findAll();
 	} // getAllOrdenDeCompras
 
 	public OrdenDeCompra getOrdenDeCompra(Long id) {
-		OrdenDeCompra tmp = null;
-		for (OrdenDeCompra ordenDeCompra : lista) {
-			if (ordenDeCompra.getId().equals(id)) {
-				tmp = ordenDeCompra;
-				break;
-			} // if
-		} // foreach
-		return tmp;
+		return ordenDeCompraRepository.findById(id).orElseThrow(
+				()-> new IllegalArgumentException("La orden de compra con el id [" + id
+						+ "] no existe")
+				);
 	} // getOrdenDeCompra
 
 	public OrdenDeCompra delteOrdenDeCompra(Long id) {
 		OrdenDeCompra tmp = null;
-		for (OrdenDeCompra ordenDeCompra : lista) {
-			if (ordenDeCompra.getId().equals(id)) {
-				tmp = lista.remove(lista.indexOf(ordenDeCompra));
-				break;
-			} // if
-		} // foreach
+		if(ordenDeCompraRepository.existsById(id)) {
+			tmp = ordenDeCompraRepository.findById(id).get();
+			ordenDeCompraRepository.deleteById(id);
+		}
 		return tmp;
 	} // deleteOrdenDeCompra
 
 	public OrdenDeCompra addOrdenDeCompra(OrdenDeCompra ordenDeCompra) {
-		lista.add(ordenDeCompra);
-		return null;
+		OrdenDeCompra tmp = null;
+			tmp = ordenDeCompraRepository.save(ordenDeCompra);
+		return tmp;
 	} // addOrdenDeCompra
 
 	public OrdenDeCompra updateOrdenDeCompra(Long id, Long usuario_id, Long productos_id, String fecha, Double total) {
 		OrdenDeCompra tmp = null;
-		for (OrdenDeCompra ordenDeCompra : lista) {
-			if (ordenDeCompra.getId().equals(id)) {
-				if (usuario_id != null)
-					ordenDeCompra.setUsuario_id(usuario_id);
-				if (productos_id != null)
-					ordenDeCompra.setProductos_id(productos_id);
-				if (fecha != null)
-					ordenDeCompra.setFecha(fecha);
-				if (total != null)
-					ordenDeCompra.setTotal(total);
-				tmp = ordenDeCompra;
-				break;
-			} // if
-		} // foreach
+			if (ordenDeCompraRepository.existsById(id)) {
+				tmp = ordenDeCompraRepository.findById(id).get();
+				if (usuario_id != null) tmp.setUsuario_id(usuario_id);
+				if (productos_id != null) tmp.setProductos_id(productos_id);
+				if (fecha != null) tmp.setFecha(fecha);
+				if (total != null) tmp.setTotal(total);
+				ordenDeCompraRepository.save(tmp);
+			}else {
+				System.out.println("Update - La orden de conpra con el id [" + id
+						+ " ] no existe");
+			} //else // if
 		return tmp;
 	}//putOrdenDeCompra
 

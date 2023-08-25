@@ -1,13 +1,28 @@
 package org.generation.amorPeludo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity 
+@Table(name="ordenesdecompra")
 public class OrdenDeCompra {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column (name="id",unique=true, nullable=false)
 	private Long id;
+	@Column (nullable=false)
 	private Long usuario_id;
+	@Column (nullable=false)
 	private Long productos_id;
+	@Column (nullable=false)
 	private String fecha;
+	@Column (nullable=false)
 	private Double total;
-	private static long totalOrden = 0;
 	
 	public OrdenDeCompra(Long usuario_id, Long productos_id, String fecha, Double total) {
 		super();
@@ -15,16 +30,10 @@ public class OrdenDeCompra {
 		this.productos_id = productos_id;
 		this.fecha = fecha;
 		this.total = total;
-		
-		OrdenDeCompra.totalOrden++;
-		this.id=OrdenDeCompra.totalOrden;
+
 	}//constructor OrdenDeCompra
 
-	public OrdenDeCompra() {
-		super();
-		OrdenDeCompra.totalOrden++;
-		this.id=OrdenDeCompra.totalOrden;
-	}//constructor vacío OrdenCompra
+	public OrdenDeCompra() {}//constructor vacío OrdenCompra
 
 	public Long getUsuario_id() {
 		return usuario_id;

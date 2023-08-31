@@ -1,0 +1,393 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #252F48;
+}
+
+/* ******* navBar *********** */
+.navbar-expand-lg {
+    background-color: #A9C3B8;
+    display: flex;
+}
+a{
+    color: #252F48;
+    text-decoration: none;
+}
+.bi {
+    color: #D16D79;
+}
+
+.nav-item:hover{
+    background-color: #b7d4c8;
+    border-color: #EDEDEF;
+}
+.navbar.nav-item:hover{
+    background-color: #A9C3B8;
+    border-color: #EDEDEF;
+}
+.navbar-margin-l {
+margin-left: 2rem;
+}
+.navbar-icon{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.nabImg{
+    width: 48px;
+    height: 48px;
+}
+
+/* ****** INDEX ***** */
+.alert-index {
+    background-color: #D16D79;
+    border-color: #ee384d;
+    color: #EDEDEF;
+}
+
+.imgCarrusel {
+    filter: grayscale(80%);
+    border-radius: 50px;
+}
+
+.textApoyo{
+    text-align: justify;
+}
+
+/* ****** CARRUSEL ****** */
+.margin-icon1{
+    margin-top:1.5em;
+}
+.margin-icon2{
+    margin-top:0.5em;
+}
+.margin-icon3{
+    margin-top:0.5em;
+}
+/* background del carrusel */
+.contbg {
+    margin-top: 3em;
+    background-color: #f0f0f0;
+    border-radius: 30px;
+}
+
+.titulosCarrusel{
+    font-weight: bold;
+    padding: 15px;
+}
+
+/* estilo de los parrafos del carrusel*/
+.pCarousel {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #252F48;
+    text-align: justify;
+}
+
+/*cartas de productos*/
+.cardProdsFlex{
+    display: flex;
+}
+.cardProds {
+    background-color: #9bc1b1;
+    flex: 50%;
+    flex-direction: column;
+}
+.cardProds .cardProdsContent{
+    flex-grow: 1;
+    flex-shrink: 1;
+    background-color: #9bc1b1;
+}
+
+.cardFooterBg{
+    background-color: #9bc1b1;
+}
+
+.btnProds{
+    width: 120px ;
+    height: 30px ;
+    font-size: 12px;;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    position: absolute;
+    right: -30px;
+    bottom: 50px;
+}
+.btnProds1{
+    width: 120px ;
+    height: 30px ;
+    font-size: 12px;;
+    font-family: 'Montserrat', sans-serif;
+    padding: 5px;
+    position: absolute;
+    right: -30px;
+    bottom: 10px;
+}
+
+.btnProds:hover{
+    background-color: #EDEDEF;
+    border-color: #EDEDEF;
+    color: #D16D79;
+}
+.btnProds1:hover{
+    background-color: #EDEDEF;
+    border-color: #EDEDEF;
+    color: #D16D79;
+}
+
+.card-title{
+    text-align: center;
+}
+
+.card-img-top{
+width: 90%;
+height: 90%;
+margin: 1rem;
+}
+.cardTextProds {
+    text-align: justify;
+    padding: 10px;
+}
+
+/* resolución movil */
+@media (min-width:320px) and (max-width:576px){
+    .pCarousel {
+        font-size: 14px;
+    }
+
+    .carText {
+        margin-bottom: 1em;
+    }
+    .margin-icon1{
+        margin-top:0px;
+    }
+    .margin-icon2{
+        margin-top:0px;
+    }
+    .margin-icon3{
+        margin-top:0px;
+    }
+    .btnProds{
+        right: -20px;
+        }
+    .btnProds1{
+        right: -20px;
+        }
+    .btn-form-admi{
+        padding-left: 1px;
+        padding-right:1px; 
+    }
+}
+
+/*resolución de tablet*/
+@media (min-width: 577px) and (max-width:992px){
+    .pCarousel {
+        font-size: 16px;
+    }
+    .btnProds{
+        right: -30px;
+    }
+    .btnProds1{
+        right: -30px;
+    }
+}
+
+/*resolución de laptop*/
+@media (min-width: 992px) and (max-width:1199px){
+    .pCarousel {
+        font-size: 16px;
+    }
+    .btnProds{
+        right: -30px;
+    }
+    .btnProds1{
+        right: -30px;
+    }
+    .navbar-margin-l {
+        margin-left: 0%;
+        }
+    .navbar-icon{
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+}
+
+/* ****** Cards integrantes *******  */
+
+.tituloIntegrantes{
+    font-weight: bold;
+    color: #252F48;
+    padding: 15px;
+}
+.contC {
+    background-color: rgba(188, 188, 188, 0.20);
+    padding: 20px;
+    border-radius: 30px;
+    margin-top: 3em;
+
+}
+
+.card-title {
+    font-weight: bold;
+    color: #252F48
+}
+
+.card-subtitle {
+    font-size: large;
+    margin-top: 15px;
+    color: #9bc1b1;
+}
+
+.card-text {
+    text-align: justify;
+    padding: 10px;
+    color: #252F48
+}
+
+
+.col {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.icon-nosotros-git{
+    width: 4rem;
+    margin-right: 2rem;
+}
+.icon-nosotros-linked{
+    width: 4rem;
+}
+.card-nostros-bg{
+    background-color: #ffff;
+}
+
+
+/* ****** FOOTER *******  */
+
+/* Íconos */
+.fa-tiktok {
+    font-size: x-large;
+    color: #D16D79;
+}
+
+.fa-facebook {
+    font-size: x-large;
+    color: #D16D79;
+}
+
+.fa-instagram {
+    font-size: x-large;
+    color: #D16D79;
+}
+
+/* Footer style */
+.footer-bg {
+    background-color: #A9C3B8;
+    display: flex;
+}
+
+.pModal{
+    text-align: justify;
+}
+
+.btn-primary {
+    background-color: #D16D79;
+    border-color: #D16D79;
+
+}
+
+.btn-primary:hover {
+    background-color: #EDEDEF;
+    border-color: #D16D79;
+    color: #D16D79;
+
+}
+
+/****** Página de Contacto *******/
+.containerContacto{
+    background-color: #EDEDEF;
+    width: 380px;
+    height: 576px;
+    padding: 30px;
+    margin: 40px;
+    border-radius: 30px;
+    text-align: center;
+    
+}
+.containerOpinion{
+    background-color: #EDEDEF;
+    width: 610px;
+    height: auto;
+    display: flex;
+    padding: 30px;
+    margin: 40px;
+    border-radius: 30px;
+    flex-direction: column;  
+    text-align: center;
+}
+
+.containerRegistro{
+    background-color: #EDEDEF;
+    border-radius: 30px;
+    text-align: center;
+}
+
+
+button{
+    background-color: #D16D79;
+    border-radius: 10px;
+    border-color:#D16D79 ;
+    font-family: 'Montserrat', sans-serif;
+    color:#EDEDEF;
+    padding: 10px 50px;
+    margin: 10px;   
+}
+
+svg{
+    display: flex;
+}
+
+.pCards{
+    text-align: left;
+    padding-right: 3em;
+}
+
+/***** FORMULARIO ADMI ******/
+
+.containerOpinionAdmi{
+    background-color: #EDEDEF;
+    align-items: center;
+    padding: 30px;
+    margin: 40px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+
+.btnImg:hover{
+    background-color: #EDEDEF;
+    border-color: #EDEDEF;
+    color: #D16D79;
+}
+.btn-form-admi{
+    background-color:#A9C3B8;
+    border-radius: 10px;
+    padding-left: 6.5rem;
+    padding-right: 6.5rem;
+    border-color: #A9C3B8;
+    border-radius: 10px;
+    color: #EDEDEF;
+}
+
+/* Registro */
+
+.linkCuenta{
+    text-decoration:underline;
+}
+
+/* Alertas */
+.alertModificado {
+    margin-top: 8px;
+    font-size: .9rem;
+}

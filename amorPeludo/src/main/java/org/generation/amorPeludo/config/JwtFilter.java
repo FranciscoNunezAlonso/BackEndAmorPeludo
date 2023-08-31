@@ -16,6 +16,7 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureException;
 
+
 public class JwtFilter extends GenericFilterBean {
 	// Crear datos para que me aplique un filtro 
 

@@ -46,8 +46,8 @@ public class ProductosController {
 	}// deleteProducut
 	
 	@PostMapping
-	public Productos addProduct(@RequestBody Productos producto) {
-		return productosService.addProducto(producto);
+	public Productos addProduct(@RequestBody Productos productos) {
+		return productosService.addProducto(productos);
 	}//addProduct
 	
 	@PutMapping(path="{prodId}")

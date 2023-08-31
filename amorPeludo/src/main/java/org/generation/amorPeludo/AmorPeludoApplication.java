@@ -12,7 +12,7 @@ public class AmorPeludoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AmorPeludoApplication.class, args);
 	}
-	
+
 	
 	//@Bean public FilterRegistrationBean<JwtFilter> jwtFilter(){
 	//FilterRegistrationBean<JwtFilter> registrationBean = new

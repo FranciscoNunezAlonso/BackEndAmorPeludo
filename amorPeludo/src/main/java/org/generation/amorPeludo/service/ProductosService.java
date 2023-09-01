@@ -41,10 +41,10 @@ public class ProductosService {
 
 	public Productos addProducto(Productos productos) {
 		Productos tmp = null;
-		if (productoRepository.findByTittle(productos.getTittle()).isEmpty()) {
+		if (productoRepository.findByTittle(productos.getTitle()).isEmpty()) {
 			tmp = productoRepository.save(productos);
 		}else {
-			System.out.println("Ya existe el producto con el nombre [" + productos.getTittle() + "]");
+			System.out.println("Ya existe el producto con el nombre [" + productos.getTitle() + "]");
 		}//if
 		return tmp;
 	} // addProducto
@@ -53,7 +53,7 @@ public class ProductosService {
 	Productos tmp=null;
 	if (productoRepository.existsById(id)) {//found
 		tmp=productoRepository.findById(id).get();
-		if(tittle!=null) tmp.setTittle(tittle);
+		if(tittle!=null) tmp.setTitle(tittle);
 		if(price!=null) tmp.setPrice(price);
 		if(description!=null) tmp.setDescription(description);
 		if(img1!=null) tmp.setImg1(img1);

@@ -16,7 +16,7 @@ public class Productos {
 	@Column (name="id",unique=true, nullable=false)
 	private Long id;
 	@Column (nullable=false)
-	private String title;
+	private String tittle;
 	@Column (nullable = false)
 	private Double price;
 	@Column (nullable = false)
@@ -27,8 +27,8 @@ public class Productos {
 	private String img2;
 
 	
-	public Productos(String title, Double price, String description, String img1, String img2) {
-		this.title = title;
+	public Productos(String tittle, Double price, String description, String img1, String img2) {
+		this.tittle = tittle;
 		this.price = price;
 		this.description = description;
 		this.img1 = img1;
@@ -40,13 +40,13 @@ public class Productos {
 	} // constructor vacio
 
 	// GETTERS Y SETTERS
-	public String getTitle() {
-		return title;
-	} //getTitle
+	public String getTittle() {
+		return tittle;
+	} //getTittle
 
-	public void setTitle(String title) {
-		this.title = title;
-	} // setTitle
+	public void setTittle(String tittle) {
+		this.tittle = tittle;
+	} // setTittle
 
 	public Double getPrice() {
 		return price;
@@ -86,7 +86,7 @@ public class Productos {
 
 	@Override
 	public String toString() {
-		return "Productos [id=" + id + ", title=" + title + ", price=" + price + ", description=" + description
+		return "Productos [id=" + id + ", tittle=" + tittle + ", price=" + price + ", description=" + description
 				+ ", img1=" + img1 + ", img2=" + img2 + "]";
 	}//toString
 	

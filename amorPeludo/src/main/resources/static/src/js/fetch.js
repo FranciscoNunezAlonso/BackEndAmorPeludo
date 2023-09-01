@@ -27,7 +27,7 @@ function displayProducts(products) {
         <div class="card cardProds h-80 w-100">
           <img src="${product.img1}" class="card-img-top imgCard" alt="image" onmouseover="changeImage(this, '${item.imgOnMouseover}')" onmouseout="resetImage(this)" ontouchstart="changeImage(this, '${item.imgontouchstart}')" ontouchend="resetImage(this)" >
         <div class="card-body cardProdsContent">
-          <h6 class="card-title">${product.title}</h6>
+          <h6 class="card-title">${product.tittle}</h6>
             <h5 class="card-title">$${product.price}</h5>
               <p class="cardTextProds">${product.description}</p>
         </div>

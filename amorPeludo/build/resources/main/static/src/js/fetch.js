@@ -23,21 +23,20 @@ function displayProducts(products) {
         const productCard = document.createElement("div");
         productCard.className = "col-12 col-md-6 col-lg-4 mb-3";
         productCard.innerHTML = `
-            <div class="card-box card h-100">
-                <img src="${product.img1}" class="card-img-top" alt="Foto del producto">
-                <div class="card-body">
-                    <h5 class="card-title">${product.title}</h5>
-                    <p class="card-text">${product.description}</p>
-                    <p class="text-center"><strong>$${product.price}</strong></p>
-                    <div class="row">
-                        <div class="col">
-                            <div style="text-align: center">
-                                <button class="btn btn-lg btn-block" type="submit"><strong>Agregar</strong></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="col cardProdsFlex">
+        <div class="card cardProds h-80 w-100">
+          <img src="${product.img1}" class="card-img-top imgCard" alt="image" onmouseover="changeImage(this, '${item.imgOnMouseover}')" onmouseout="resetImage(this)" ontouchstart="changeImage(this, '${item.imgontouchstart}')" ontouchend="resetImage(this)" >
+        <div class="card-body cardProdsContent">
+          <h6 class="card-title">${product.title}</h6>
+            <h5 class="card-title">$${product.price}</h5>
+              <p class="cardTextProds">${product.description}</p>
+        </div>
+        <div class="card-footer mt-4 mb-4 border-0 cardFooterBg">
+        <a href="#" class="btn btn-primary btnProds">Comprar</a>
+        <a href="#" class="btn btn-primary btnProds1">Agregar al carrito</a>
+      </div>
+        </div>
+      </div>
         `;
         itemsContainer.appendChild(productCard);
     });

@@ -28,7 +28,6 @@ El objetivo del presente proyecto es desarrollar un eCommerce para el negocio �
 - Daniela Heredia Tolumes (https://github.com/DanHT22)
 - Dominique Marin Vicente (https://github.com/DominiqueMv)
 - Francisco Núñez Alonso (https://github.com/FranciscoNunezAlonso)
-- Jose Luis Soto Chávez (https://github.com/joseLuisppp90)
 
 --------------------------------------------------------------------------------
 
